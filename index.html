@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+    <title>Testimonial Page | devChallenges.io</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* background-color: FAFAF9; */
+      }
+
+      body {
+        background-color: #FAFAF9;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        /* overflow: hidden; */
+        font-family: Sora; 
+      }
+
+      main {
+        padding: 50px 50px 0;
+        display: flex;
+        flex-direction: row;
+        flex: 1 0 auto;
+      }
+
+      .reviewers,
+      .testimonials {
+        flex: 1; /* divide a largura do main em 2 partes iguais */
+        min-width: 0;
+      }
+
+      .reviewers {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        justify-content: space-around;
+      }
+
+      .reviewers-top {
+        /* margin-top: 0; */
+        padding-top: 30px;
+        padding-bottom: 10px;
+      }
+
+      .reviewers-top-img {
+        width: 50px;
+        height: 50px;
+        padding: 15px;
+        border-radius: 50%;
+        background-color: #F5C044;
+        color: var(--bg);
+      }
+
+      .reviewers ul li img {
+        margin-top: 0;
+      }
+
+      .reviewers h1 {
+        font-size: 36px;
+      }
+
+      .reviewers p {
+        font-size: 20px;
+        line-height: 1.8;
+        color: #52525A;
+      }
+
+      .introduction {
+        list-style: none;
+        color: #52525A;
+      }
+
+      .introduction li {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-bottom: 10px;
+      }
+
+      .introduction li p {
+        margin: 0;
+        font-size: 14px;
+        color: #52525A;
+      }
+
+      .testimonials {
+        padding: 70px 0 70px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      .commentOne {
+        background-color: #FFFFFF;
+        width: 360px;
+        box-shadow: 0px 30px 100px 0px rgba(17, 23, 41, 0.05);
+        border-radius: 10px;
+        align-self: flex-end;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .commentOne p,
+      .commentTwo p {
+        line-height: 1.8;
+        color: #52525A;
+        display: row;
+      }
+
+      .commentOne h3,
+      .commentTwo h3 {
+        font-weight: 600;
+        font-size: 16px;
+      }
+
+      .commentTwo {
+        background-color: #FFFFFF;
+        padding: 20px;
+        width: 360px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: 0px 30px 100px 0px rgba(17, 23, 41, 0.05);
+        gap: 8px;
+        align-self: flex-start;
+      }
+
+      .commentOne span,
+        .commentTwo span {
+          
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .author-info {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 15px;
+        margin-top: auto;
+      }
+
+      @media (min-width: 857px) and (max-width: 1024px) {
+        main {
+          flex-direction: column;
+          padding: 10px ;
+          /* overflow: scroll; */
+        }
+
+        .reviewers {
+          padding-top: 0px;
+          padding-bottom: 10px;
+        }
+
+        .reviewers-top {
+          padding-top: 0px;
+          padding-bottom: 10px;
+        }
+
+        .reviewers h1 {
+          padding-bottom: 10px;
+          font-weight: 600;
+          
+        }
+
+        .introduction {
+          padding-top: 30px;
+        }
+        
+        .introduction li p {
+          
+          padding-left: 10px;
+        }
+        
+        .testimonials {
+          padding: 10px 0 10px 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          row-gap: 40px;
+          margin-left: 193px;
+          margin-right: 215px;
+        }
+
+        .commentOne {
+          padding: 28px 40px 28px 40px;
+          gap: 18px;
+        }
+
+        .commentTwo {
+          padding: 28px 40px 28px 40px;
+          gap: 18px;
+        }
+
+      }
+
+      @media (width <= 857px) {
+        main {
+          flex-direction: column;
+          padding: 10px ;
+          /* overflow: scroll; */
+        }
+
+        .reviewers {
+          display: flex;
+          flex-direction: column;
+          margin-right: 20px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          justify-content: space-around;
+        }
+
+        .reviewers h1 {
+          padding-bottom: 10px;
+          font-weight: 600; 
+        }
+
+        .reviewers p {
+          line-height: 1.8;
+          padding-bottom: 30px;
+          
+        }
+
+        .reviewers ul li p {
+          padding-bottom: 0;
+          padding-left: 10px;
+        }
+
+        .testimonials {
+          padding: 10px 0 10px 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          row-gap: 40px;
+        }
+
+        .commentOne {
+          width: 100%;
+          padding: 28px 40px 28px 40px;
+          gap: 18px;
+        }
+        
+        .commentTwo {
+          width: 100%;
+          padding: 28px 40px 28px 40px;
+          gap: 18px;
+        }
+        
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="reviewers">
+        <div>
+          <div class="reviewers-top">
+            <img class="reviewers-top-img" src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/Yellow-Star-PNG.png" alt="yellow star" width="10" />
+          </div>
+          <h1>Reviewers</h1>
+        
+        </div>
+          
+        <p>Reviewers is where people can access guidelines, checklists, and other tools to assist them in reviewing papers or manuscripts. It provides a structured approach to ensure that the review process is thorough, efficient, and consistent.</p>
+      
+        <ul class="introduction">
+          <li>
+            <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/Done_ring_round_fill.svg" alt="" />
+            <p>Checklist to Review an Academic Paper</p>
+          </li>
+          <li>
+            <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/Done_ring_round_fill.svg" alt="" />
+            <p>Peer Review Checklist</p>
+          </li>
+          <li>
+            <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/Done_ring_round_fill.svg" alt="" />
+            <p>hecklist for Editors, Reviewers, and Authors of SPIE Journals</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="testimonials">
+        <div class="commentOne">
+            <span>
+              <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/google-png.png" alt="google image" />
+              <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/Star_fill.svg" alt="gold_star" />
+              <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/Star_fill.svg" alt="gold_star" />
+              <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/Star_fill.svg" alt="gold_star" />
+              <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/Star_fill.svg" alt="gold_star" />
+              <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/Star_fill_gray.svg" alt="gold_star" />
+            </span>
+            <h3>Samantha Lee</h3>
+            <p>The checklist ensures that the review process is thorough</p>
+        </div>
+        <div class="commentTwo">
+            <span>
+              <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/meta-png.png" alt="google image" />
+              <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/Star_fill.svg" alt="gold_star" />
+              <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/Star_fill.svg" alt="gold_star" />
+              <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/Star_fill.svg" alt="gold_star" />
+              <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/Star_fill.svg" alt="gold_star" />
+              <img src="/home/victorricci/Documentos/programação/frontend/CHALLENGES/Testimonial-page-master/resources/Star_fill.svg" alt="gray_star" />
+            </span>
+            <h3>Rachel Patel</h3>
+            <p>I highly recommend the Writecream Business Description</p>
+        </div>
+
+      </div>
+    </main>
+
+    <div class="author-info">
+      Coded by <a href="#">Victor C. Ricci</a> | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
+        >devChallenges.io</a
+      >.
+    </div>
+  </body>
+</html>
+
